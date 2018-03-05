@@ -1,8 +1,10 @@
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class JavaFX extends Application {
@@ -36,6 +38,23 @@ public class JavaFX extends Application {
 		return scene;
 	}
 	
+	public Scene upg5() {
+		
+		Group root5 = new Group();
+		Scene scene5 = new Scene(root5,WIDTH,HEIGHT);
+		Rectangle rect = new Rectangle();
+		
+		scene5.setOnKeyPressed(event -> {
+			KeyCode key = event.getCode();
+			if (key == KeyCode.UP) {
+			} else if (key == KeyCode.DOWN) {
+			} else if (key == KeyCode.LEFT) {
+			} else if (key == KeyCode.RIGHT) {	
+			}
+			
+		});
+		return scene5;
+	}
 
 	public static void main(String[] args) {
 		launch();
