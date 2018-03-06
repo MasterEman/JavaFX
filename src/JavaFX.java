@@ -16,7 +16,7 @@ public class JavaFX extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		scene = upg1();
+		scene = upg2();
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -38,6 +38,26 @@ public class JavaFX extends Application {
 		return scene;
 	}
 	
+	//---------------------------------------------------------------------------------------------------------
+	
+	public Scene upg2() {
+		
+		Group root2 = new Group();
+		
+		Scene scene = new Scene(root2,WIDTH,HEIGHT);
+		
+		for (int i = 0; i < 50; i++) {
+			Circle circ = new Circle(scene.getWidth()*Math.random(),scene.getHeight()*Math.random(),10); 
+			circ.setFill(Color.BLACK);
+			root2.getChildren().add(circ);
+		}
+		
+		return scene;
+		
+	}
+	
+	//---------------------------------------------------------------------------------------------------------
+	
 	public Scene upg5() {
 		
 		Group root5 = new Group();
@@ -55,6 +75,7 @@ public class JavaFX extends Application {
 		});
 		return scene5;
 	}
+	
 
 	public static void main(String[] args) {
 		launch();
