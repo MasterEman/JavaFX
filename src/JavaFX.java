@@ -67,6 +67,28 @@ public class JavaFX extends Application {
 		}
 	
 	//---------------------------------------------------------------------------------------------------------
+	
+	public Scene upg4() {
+
+		Group root4 = new Group();
+		Scene scene4 = new Scene(root4, 1600, 1000, Color.GREEN);
+
+		Rectangle rect1 = new Rectangle(0, 0, 500, 400);
+		Rectangle rect2 = new Rectangle(0, scene4.getHeight()-400, 500, 400);
+		Rectangle rect3 = new Rectangle(scene4.getWidth()-900, 0, 900, 400);
+		Rectangle rect4 = new Rectangle(scene4.getWidth()-900, scene4.getHeight()-400, 900, 400);
+
+		rect1.setFill(Color.GREEN);
+		rect3.setFill(Color.GREEN);
+		rect4.setFill(Color.GREEN);
+		rect2.setFill(Color.GREEN);
+
+		root4.getChildren().addAll(rect1,rect2,rect3,rect4);
+		
+		return scene4;
+	}
+	
+	//---------------------------------------------------------------------------------------------------------
 
 	public Scene upg5() {
 
