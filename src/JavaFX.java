@@ -16,8 +16,6 @@ public class JavaFX extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		scene = upg2();
-
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
@@ -43,7 +41,6 @@ public class JavaFX extends Application {
 	public Scene upg2() {
 		
 		Group root2 = new Group();
-		
 		Scene scene = new Scene(root2,WIDTH,HEIGHT);
 		
 		for (int i = 0; i < 50; i++) {
@@ -57,28 +54,47 @@ public class JavaFX extends Application {
 	}
 	
 	//---------------------------------------------------------------------------------------------------------
+		
+	public Scene upg3() {
 	
+		Group root3 = new Group();
+		Scene scene = new Scene(root3,WIDTH,HEIGHT);
+		
+		
+		
+			return scene;
+
+		}
+	
+	//---------------------------------------------------------------------------------------------------------
+
 	public Scene upg5() {
-		
+
 		Group root5 = new Group();
-		Scene scene5 = new Scene(root5,WIDTH,HEIGHT);
-		Rectangle rect = new Rectangle();
+		Scene scene5 = new Scene(root5, 500, 500);
+
+		Rectangle rect = new Rectangle(scene5.getWidth()/2, scene5.getHeight()/2, 100, 50);
+		rect.setFill(Color.BLACK);
+		root5.getChildren().add(rect);
 		
-		scene5.setOnKeyPressed(event -> {
-			KeyCode key = event.getCode();
-			if (key == KeyCode.UP) {
-			} else if (key == KeyCode.DOWN) {
-			} else if (key == KeyCode.LEFT) {
-			} else if (key == KeyCode.RIGHT) {	
+		scene5.setOnKeyPressed( event-> {
+
+			if ( event.getCode() == KeyCode.W ) {
+				rect.setTranslateY(rect.getTranslateY()-10);
 			}
-			
+			if ( event.getCode() == KeyCode.D ) {
+				rect.setTranslateX(rect.getTranslateX()+10);
+			}
+			if ( event.getCode() == KeyCode.A ) {
+				rect.setTranslateX(rect.getTranslateX()-10);
+			}
+			if ( event.getCode() == KeyCode.S ) {
+				rect.setTranslateY(rect.getTranslateY()+10);
+			}
+
 		});
+		
 		return scene5;
-	}
-	
 
-	public static void main(String[] args) {
-		launch();
 	}
-
 }
