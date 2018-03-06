@@ -119,4 +119,39 @@ public class JavaFX extends Application {
 		return scene5;
 
 	}
+
+//---------------------------------------------------------------------------------------------------------
+
+	public Scene upg6() {
+
+		Group root6 = new Group();
+		Scene scene6 = new Scene(root6, 500, 500);
+
+		int size = 50;
+
+		Circle rect = new Circle(0, 0, size);
+
+		rect.setTranslateX(scene6.getWidth()/2);
+		rect.setTranslateY(scene6.getHeight()/2);
+
+		scene6.setOnKeyPressed( event->{
+
+			if ( event.getCode() == KeyCode.W && !(rect.getTranslateY() < 0)) {
+				rect.setTranslateY(rect.getTranslateY()-15);
+			}
+			if ( event.getCode() == KeyCode.D && !(rect.getTranslateX() > scene6.getWidth()-size)) {
+				rect.setTranslateX(rect.getTranslateX()+15);
+			}
+			if ( event.getCode() == KeyCode.A && !(rect.getTranslateX() < 0)) {
+				rect.setTranslateX(rect.getTranslateX()-15);
+			}
+			if ( event.getCode() == KeyCode.S && !(rect.getTranslateY() > scene6.getHeight()-size)) {
+				rect.setTranslateY(rect.getTranslateY()+15);
+			}
+		});
+
+		root6.getChildren().add(rect);
+		
+		return scene6;
+	}
 }
