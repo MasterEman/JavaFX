@@ -139,14 +139,14 @@ public class JavaFX extends Application {
 			if ( event.getCode() == KeyCode.W && !(rect.getTranslateY() < 0)) {
 				rect.setTranslateY(rect.getTranslateY()-15);
 			}
-			if ( event.getCode() == KeyCode.D && !(rect.getTranslateX() > scene6.getWidth()-size)) {
-				rect.setTranslateX(rect.getTranslateX()+15);
-			}
 			if ( event.getCode() == KeyCode.A && !(rect.getTranslateX() < 0)) {
 				rect.setTranslateX(rect.getTranslateX()-15);
 			}
 			if ( event.getCode() == KeyCode.S && !(rect.getTranslateY() > scene6.getHeight()-size)) {
 				rect.setTranslateY(rect.getTranslateY()+15);
+			}
+			if ( event.getCode() == KeyCode.D && !(rect.getTranslateX() > scene6.getWidth()-size)) {
+				rect.setTranslateX(rect.getTranslateX()+15);
 			}
 		});
 
