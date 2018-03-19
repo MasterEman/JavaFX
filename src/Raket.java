@@ -1,5 +1,6 @@
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
@@ -11,20 +12,12 @@ public class Raket extends Group {
 
 	public Raket(double width) {
 
-		Rectangle top = new Rectangle(2 * width / 3, width / 3);
-		//Rectangle bottom = new Rectangle(width, width / 3);
-		//bottom.setTranslateY(width / 3);
+		Rectangle bottom = new Rectangle(2 * width / 3, width / 3);
+		Polygon top = new Polygon(0,0, 0,30 , 30,15);
+		bottom.setTranslateY(width / 28);
+		top.setTranslateX(50);
 
-		//Circle tire1 = new Circle(width / 7);
-		//Circle tire2 = new Circle(width / 7);
-
-		//tire1.setTranslateY(2 * width / 3);
-		//tire2.setTranslateY(2 * width / 3);
-
-		//tire1.setTranslateX(width / 5);
-		//tire2.setTranslateX(width - width / 5);
-
-		//this.getChildren().addAll(top, bottom, tire1, tire2);
+		this.getChildren().addAll(bottom);
 		this.getChildren().addAll(top);
 
 
@@ -42,7 +35,7 @@ public class Raket extends Group {
 	}
 
 	public void tuta() {
-		System.out.println("TUT");
+		System.out.println("Beep! Beep! Motherfucker!");
 	}
 
 	public void moveUp() {
