@@ -12,18 +12,21 @@ public class Raket extends Group {
 
 	public Raket(double width) {
 
-		Polygon top = new Polygon(0,0 , 0,30 , 30,15);
-		Rectangle bottom = new Rectangle(50,25);
-		Polygon right = new Polygon(0,0 , 0,20 , 20,20);
 		
-		top.setTranslateX(50);
-		bottom.setTranslateY(width / 28);
-		right.setTranslateY(25);
-		right.setTranslateX(0);
+		Polygon raket = new Polygon(0,0 , 20,10 , 50,10 , 70,20 , 50,30 , 20,30 , 0,40);
+		//Polygon top = new Polygon(0,0 , 0,30 , 30,15);
+		//Rectangle bottom = new Rectangle(50,25);
+		//Polygon right = new Polygon(0,0 , 0,20 , 20,20);
+		
+		//top.setTranslateX(50);
+		//bottom.setTranslateY(width / 28);
+		//right.setTranslateY(25);
+		//right.setTranslateX(0);
 
-		this.getChildren().addAll(top);
-		this.getChildren().addAll(bottom);
-		this.getChildren().addAll(right);
+		this.getChildren().addAll(raket);
+		//this.getChildren().addAll(top);
+		//this.getChildren().addAll(bottom);
+		//this.getChildren().addAll(right);
 
 	}
 
