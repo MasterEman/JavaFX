@@ -5,6 +5,8 @@ import javafx.scene.shape.Shape;
 
 public class Raket extends Group {
 
+	public double boost = 1;
+	
 	public Raket() {
 		this(75);
 	}
@@ -44,16 +46,30 @@ public class Raket extends Group {
 		double deg = this.getRotate();
 		deg = Math.toRadians(deg);
 
-		this.setTranslateY(this.getTranslateY() - Math.sin(deg) * 5);
-		this.setTranslateX(this.getTranslateX() - Math.cos(deg) * 5);
+		this.setTranslateY(this.getTranslateY() - Math.sin(deg) * 5*boost);
+		this.setTranslateX(this.getTranslateX() - Math.cos(deg) * 5*boost);
 	}
 
 	public void moveRight() {
 		double deg = this.getRotate();
 		deg = Math.toRadians(deg);
 
-		this.setTranslateY(this.getTranslateY() + Math.sin(deg) * 5);
-		this.setTranslateX(this.getTranslateX() + Math.cos(deg) * 5);
+		this.setTranslateY(this.getTranslateY() + Math.sin(deg) * 5*boost);
+		this.setTranslateX(this.getTranslateX() + Math.cos(deg) * 5*boost);
+	}
+
+	public void boost() {
+		boost = 3;
+		
+	}
+
+	public void blackout() {
+		
+		for (int i = 0; i < this.getChildren().size(); i++) {
+			Shape s = (Shape) this.getChildren().get(i);
+			s.setFill(Color.BLACK);
+		}
+		
 	}
 
 }

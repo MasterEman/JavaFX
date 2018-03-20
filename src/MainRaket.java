@@ -44,6 +44,12 @@ public class MainRaket extends Application {
 
 				keys.remove(event.getCode());
 			}
+			if (event.getCode().equals(KeyCode.SPACE)) {
+
+				raket.boost = 1;
+				raket.blackout();
+				
+			}
 		});
 
 		AnimationTimer at = new AnimationTimer() {
@@ -51,20 +57,14 @@ public class MainRaket extends Application {
 			@Override
 			public void handle(long now) {
 
+				//raket.update();
+				
 				for (int i = 0; i < keys.size(); i++) {
 
 					KeyCode key = keys.get(i);
 
 					switch (key) {
 
-					case W:
-					case UP:
-						raket.moveUp();
-						break;
-					case S:
-					case DOWN:
-						raket.moveDown();
-						break;
 					case A:
 					case LEFT:
 						raket.moveLeft();
@@ -72,17 +72,18 @@ public class MainRaket extends Application {
 					case D:
 					case RIGHT:
 						raket.moveRight();
-						break;
-					case SPACE:
-						raket.tuta();
-						raket.changeColor();
+						if(keys.contains(KeyCode.SPACE)){
+							raket.tuta();
+							raket.changeColor();
+							raket.boost();
+						}
 						break;
 					case E:
 						raket.setRotate(raket.getRotate() + 2);
 						break;
 					case Q:
 						raket.setRotate(raket.getRotate() - 2);
-						break;
+						break;						
 					default:
 						break;
 					}
@@ -103,6 +104,8 @@ public class MainRaket extends Application {
 
 			}
 
+			
+			
 		};
 
 		at.start();
