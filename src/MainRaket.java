@@ -74,7 +74,7 @@ public class MainRaket extends Application {
 						raket.moveRight();
 						break;
 					case SPACE:
-						raket.tuta(); // LOL
+						raket.tuta();
 						raket.changeColor();
 						break;
 					case E:
