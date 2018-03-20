@@ -31,7 +31,7 @@ public class Raket extends Group {
 	}
 
 	public void tuta() {
-		System.out.println("Beep! Beep! Motherfucker!");
+		System.out.println("*rainbow road noise*");
 	}
 
 	public void moveUp() {
