@@ -4,7 +4,7 @@ import javafx.scene.shape.Circle;
 public class Studsboll extends Circle{
 
 	double angle = Math.random()*90+45;
-	double speed = 10;
+	double speed = 12;
 	
 	double xspeed;
 	double yspeed;
@@ -20,13 +20,11 @@ public class Studsboll extends Circle{
 		
 		this.setTranslateX(Math.random()*StudsbollStart.WIDTH);
 		this.setRotate(angle);
-		
 	}
 
 	public void update() {
 		edges();
-		fall();
-		
+		fall();	
 	}
 	
 	private void fall() {
@@ -39,8 +37,6 @@ public class Studsboll extends Circle{
 		
 		this.setTranslateY(this.getTranslateY() + yspeed);
 		this.setTranslateX(this.getTranslateX() + xspeed);
-		
-		
 	}
 	
 	private void edges() {
@@ -59,7 +55,5 @@ public class Studsboll extends Circle{
 		if (this.getTranslateX() < 0) {
 			this.setRotate(180-this.getRotate());
 		} 
-		
 	}
-	
 }

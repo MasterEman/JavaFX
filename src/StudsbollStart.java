@@ -34,20 +34,15 @@ public class StudsbollStart extends Application{
 
 				for(Studsboll b : balls) {
 					
-					b.update();
-					
-				}
-				
+					b.update();	
+				}	
 			}
-
 		};
 		
-		at.start();
-		
+		at.start();	
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 }
