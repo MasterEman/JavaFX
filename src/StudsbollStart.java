@@ -22,7 +22,7 @@ public class StudsbollStart extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 10; i++) {
 			balls.add(new Studsboll());
 			root.getChildren().add(balls.get(i));
 		}

@@ -16,7 +16,7 @@ public class Studsboll extends Circle{
 		int g = (int)(Math.random()*255);
 		int b = (int)(Math.random()*255);
 		
-		this.setFill(Color.rgb(r, g, b, 0.8));
+		this.setFill(Color.rgb(r, g, b, 1));
 		
 		this.setTranslateX(Math.random()*StudsbollStart.WIDTH);
 		this.setRotate(angle);
