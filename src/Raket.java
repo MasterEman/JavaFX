@@ -12,9 +12,6 @@ public class Raket extends Group {
 	public Raket(double width) {
 	
 		Polygon raket = new Polygon(0,0 , 20,10 , 50,10 , 70,20 , 50,30 , 20,30 , 0,40);
-		
-		raket.setTranslateX(300);
-		raket.setTranslateY(300);
 
 		this.getChildren().addAll(raket);
 
