@@ -3,75 +3,58 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class Card extends Group{
+public class Card extends Group {
 
-	String color;
+	public static final double WIDTH = 100;
+	public static final double HEIGHT = 200;
+
+	String suit;
 	int value;
-	int width = 100;
-	int height = 300;
-	
-	public Card(int a, int b) {
-		
-		if (a == 1) {
-			color = "Hjärter";
+
+	public Card(int suit, int value) {
+
+		if (1 <= suit && suit <= 4) {
+			if (suit == 1)
+				this.suit = "Hearts";
+			if (suit == 2)
+				this.suit = "Spades";
+			if (suit == 3)
+				this.suit = "Diamonds";
+			if (suit == 4)
+				this.suit = "Clubs";
 		}
-		else if (a == 3) {
-			color = "Spader";
+
+		if (2 <= value && value <= 14) {
+			this.value = value;
 		}
-		else if (a == 4) {
-			color = "Ruter";
-		}
-		else if (a == 2) {
-			color = "Klöver";
-		}
-		
-		if (b > 14 || b > 2) {
-			value = 2;
-		}
-		
-		if (2 >= b  && b <= 14) {
-			value = b;
-		}
-		
+
 		Text colorText = new Text();
-		colorText.setText(color);
-		
+		colorText.setText(this.suit);
+
 		Text valueText = new Text();
-		valueText.setText(value+"");
-		
-		if (value <= 10) {
-			valueText.setText(b+"");
-		}
-		else if (value == 11) {
+		if (value == 11)
 			valueText.setText("J");
-		}
-		else if (value == 12) {
-			valueText.setText("D");
-		}
-		else if (value == 13) {
+		else if (value == 12)
+			valueText.setText("Q");
+		else if (value == 13)
 			valueText.setText("K");
-		}
-		else if (value == 14) {
+		else if (value == 14)
 			valueText.setText("A");
-		}
+		else
+			valueText.setText(value + "");
 
-//-------------------------------------------------------------------------------------------------------
+		Rectangle bg = new Rectangle(WIDTH, HEIGHT);
+		bg.setFill(Color.WHITE);
 
-		Rectangle card = new Rectangle(width, height);
-		card.setFill(Color.WHITE);
-		
-		colorText.setTranslateX(width/2 - 20);
-		valueText.setTranslateX(width/2);
-		
-		colorText.setTranslateY(30);
-		valueText.setTranslateY(70);
+		colorText.setTranslateX(WIDTH / 2 - colorText.getBoundsInLocal().getWidth() / 2);
+		valueText.setTranslateX(WIDTH / 2 - valueText.getBoundsInLocal().getWidth() / 2);
 
-		this.getChildren().addAll(card, colorText, valueText);
+		colorText.setTranslateY(HEIGHT / 3);
+		valueText.setTranslateY(2 * HEIGHT / 3);
 
-//-------------------------------------------------------------------------------------------------------
-
-		
+		this.getChildren().addAll(bg, colorText, valueText);
 	}
+
 }
 
 
