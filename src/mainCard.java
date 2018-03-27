@@ -19,13 +19,16 @@ public class mainCard extends Application {
 
 		Group root = new Group();
 
-
-		Card card = new Card(1,14);
-		root.getChildren().add(card);
+		Scene scene = new Scene(root, WIDTH, HEIGHT, Color.BLACK);
 		
-		Scene scene = new Scene(root, WIDTH, HEIGHT, Color.SKYBLUE);
-
-		
+		CardDeck deck= new CardDeck();
+			deck.shuffle();
+			
+			scene.setOnKeyPressed(event -> {
+				
+				root.getChildren().add(deck.draw());
+				
+			});
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();
