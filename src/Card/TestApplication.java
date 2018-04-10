@@ -24,8 +24,8 @@ public class TestApplication extends Application {
  		
  		for (int i = 0; i < 13; i++) {
  		
- 			int color = (int) (Math.random() * 4) + 1;
- 			int value = (int) (Math.random() * 13) + 2;
+ 			//int color = (int) (Math.random() * 4) + 1;
+ 			//int value = (int) (Math.random() * 13) + 2;
  			
  			Advanced_Card c = new Advanced_Card (3, i+2);
  			c.setTranslateX((i % 7) * (Advanced_Card.WIDTH + margin) + margin + (Advanced_Card.WIDTH/2 * (i/7)));
