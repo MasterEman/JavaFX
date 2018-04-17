@@ -70,8 +70,8 @@ public class Advanced_Card extends Group {
 			colorText.setFill(Color.RED);
 			valueText.setFill(Color.RED);
 		} else if (suit == 3) {
-			colorText.setFill(Color.BLUE);
-			valueText.setFill(Color.BLUE);
+			colorText.setFill(Color.BLACK);
+			valueText.setFill(Color.BLACK);
 		} else if (suit == 4) {
 			colorText.setFill(Color.GREEN);
 			valueText.setFill(Color.GREEN);
