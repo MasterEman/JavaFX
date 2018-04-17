@@ -35,7 +35,7 @@ public class TestApplication extends Application {
  			
  			}
  		
- 		Scene scene = new Scene(root, WIDTH, HEIGHT, Color.GREEN);
+ 		Scene scene = new Scene(root, WIDTH, HEIGHT, Color.SKYBLUE);
  		 
  			
  		 		primaryStage.setScene(scene);
